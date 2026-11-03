@@ -2,7 +2,6 @@
 
 # --- KDE Plasma çekirdeği ---
 plasma-desktop
-plasma-x11-session
 plasma-nm
 plasma-pa
 plasma-systemmonitor
@@ -17,9 +16,7 @@ xdg-desktop-portal-kde
 # --- Giriş ekranı ve görüntü sunucusu ---
 sddm
 sddm-kcm
-xorg-server
 xorg-xwayland
-xf86-input-libinput
 qt6-wayland
 
 # --- KDE uygulamaları ---
