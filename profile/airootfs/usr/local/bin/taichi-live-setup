@@ -1,0 +1,11 @@
+#!/bin/bash
+# Canlı oturum için "live" kullanıcısını oluşturur (SDDM'den önce çalışır).
+set -e
+
+if ! id -u live >/dev/null 2>&1; then
+  useradd -m -G wheel,audio,video,optical,storage,input -s /bin/bash -c "Live User" live
+  passwd -d live
+fi
+
+echo '%wheel ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/10-live
+chmod 440 /etc/sudoers.d/10-live

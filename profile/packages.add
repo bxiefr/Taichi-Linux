@@ -1,0 +1,53 @@
+# releng listesine EKLENEN paketler (Taichi Linux: KDE Plasma)
+
+# --- KDE Plasma çekirdeği ---
+plasma-desktop
+plasma-x11-session
+plasma-nm
+plasma-pa
+plasma-systemmonitor
+kdeplasma-addons
+kscreen
+powerdevil
+bluedevil
+breeze-gtk
+kde-gtk-config
+xdg-desktop-portal-kde
+
+# --- Giriş ekranı ve görüntü sunucusu ---
+sddm
+sddm-kcm
+xorg-server
+xorg-xwayland
+xf86-input-libinput
+qt6-wayland
+
+# --- KDE uygulamaları ---
+konsole
+dolphin
+kate
+ark
+spectacle
+gwenview
+okular
+
+# --- Tarayıcı ---
+firefox
+
+# --- Ağ, ses, bluetooth ---
+networkmanager
+pipewire
+pipewire-alsa
+pipewire-pulse
+wireplumber
+bluez
+
+# --- Yazı tipleri ---
+noto-fonts
+noto-fonts-emoji
+ttf-dejavu
+ttf-liberation
+
+# --- Kurucu (yerel depodan gelir, bkz. aur-packages/list.txt) ---
+calamares
+os-prober

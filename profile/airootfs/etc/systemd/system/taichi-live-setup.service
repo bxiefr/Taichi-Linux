@@ -1,0 +1,12 @@
+[Unit]
+Description=Taichi Linux canlı kullanıcı kurulumu
+After=local-fs.target
+Before=display-manager.service sddm.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/taichi-live-setup
+
+[Install]
+WantedBy=multi-user.target

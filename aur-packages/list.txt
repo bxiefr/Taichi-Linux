@@ -1,0 +1,9 @@
+# AUR'dan Actions içinde derlenecek paketler (yukarıdan aşağı sırayla).
+# Bir paket diğerine bağlıysa bağımlı olan SONRA yazılır.
+# AUR'daki bağımlılıklar otomatik çözülmez, elle buraya eklenir.
+
+ckbcomp
+calamares
+
+# calamares derlenmezse yedek olarak şunu dene (calamares satırını silip):
+# calamares-git

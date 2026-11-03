@@ -1,0 +1,14 @@
+# releng listesinden ÇIKARILAN paketler (ISO boyutunu küçültmek için)
+clonezilla
+partimage
+fsarchiver
+irssi
+lynx
+lftp
+nmap
+tcpdump
+openconnect
+vpnc
+xl2tpd
+pptpclient
+wvdial
