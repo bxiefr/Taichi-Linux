@@ -1,0 +1,85 @@
+name: Build ISO
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Sürüm (boş bırakırsan bugünün tarihi kullanılır, örn. 2026.11.02)"
+        required: false
+        default: ""
+      release:
+        description: "Derleme bitince GitHub Release olarak da yayınla (ISO 2 GB altındaysa)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v4
+
+      - name: Disk alanı aç
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
+                      /usr/local/share/boost /opt/hostedtoolcache/CodeQL || true
+          sudo docker image prune --all --force || true
+          df -h /
+
+      - name: Sürümü belirle
+        id: ver
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          V="$INPUT_VERSION"
+          if [ -z "$V" ]; then V="$(date +%Y.%m.%d)"; fi
+          echo "version=$V" >> "$GITHUB_OUTPUT"
+          echo "Sürüm: $V"
+
+      - name: ISO derle (Arch Linux container içinde)
+        env:
+          VERSION: ${{ steps.ver.outputs.version }}
+        run: |
+          mkdir -p out
+          docker run --rm --privileged \
+            -e VERSION \
+            -v "$GITHUB_WORKSPACE":/work \
+            -w /work \
+            archlinux:latest \
+            bash scripts/ci-build.sh
+
+      - name: Çıktıları listele
+        run: |
+          ls -lh out/
+          df -h /
+
+      - name: Artifact olarak yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: taichi-linux-${{ steps.ver.outputs.version }}
+          path: |
+            out/*.iso
+            out/*.sha256
+          compression-level: 0
+          retention-days: 14
+          if-no-files-found: error
+
+      - name: GitHub Release oluştur
+        if: ${{ inputs.release }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.ver.outputs.version }}
+        run: |
+          SIZE=$(stat -c %s out/*.iso)
+          if [ "$SIZE" -ge 2147483648 ]; then
+            echo "::error::ISO 2 GB'den büyük, Release'e yüklenemez. Artifact'ı kullan veya paket listesini küçült."
+            exit 1
+          fi
+          gh release create "v${VERSION}" out/*.iso out/*.sha256 \
+            --title "Taichi Linux ${VERSION}" \
+            --notes "Taichi Linux ${VERSION} (Arch tabanlı, KDE Plasma). Sağlama toplamı için .sha256 dosyasına bak."
