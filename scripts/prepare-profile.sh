@@ -73,16 +73,7 @@ Server = file://${REPO_DIR}
 EOF
 
 # ---------------------------------------------------------------- 6) os-release, hostname
-mkdir -p "$A/usr/lib" "$A/etc"
-cat > "$A/usr/lib/os-release" <<EOF
-NAME="${DISTRO_NAME}"
-PRETTY_NAME="${DISTRO_NAME}"
-ID=taichi
-ID_LIKE=arch
-BUILD_ID=${VERSION}
-ANSI_COLOR="38;2;23;147;209"
-LOGO=taichi
-EOF
+mkdir -p "$A/etc"
 echo "${HOSTNAME_LIVE}" > "$A/etc/hostname"
 
 # ---------------------------------------------------------------- 7) servisler (symlink'ler)
