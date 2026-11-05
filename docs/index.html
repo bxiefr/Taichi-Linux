@@ -204,7 +204,7 @@
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-cyan-500/30 text-xs font-mono text-cyan-500 dark:text-cyan-300">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                         <span class="w-2 h-2 rounded-full bg-emerald-400 -ml-4"></span>
-                        <span data-i18n="hero_badge">ArchISO Tabanlı • Rolling Release v2026.1</span>
+                        <span data-i18n="hero_badge">ArchISO Tabanlı • Rolling Release</span>
                     </div>
 
                     <!-- Main Heading -->
@@ -223,8 +223,8 @@
                         <a href="#download" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 hover:opacity-90 transition-all text-center shadow-[0_0_25px_rgba(0,242,254,0.35)] flex items-center justify-center gap-3">
                             <i class="fa-solid fa-circle-down text-lg"></i> <span data-i18n="hero_btn_get">Taichi ISO'yu Edin</span>
                         </a>
-                        <a href="#terminal-demo" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-heading glass-card hover:bg-cyan-500/10 transition-all text-center flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-terminal text-cyan-400"></i> <span data-i18n="hero_btn_live">Canlı Deneyim</span>
+                        <a href="https://github.com/bxiefr/Taichi-Linux" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-heading glass-card hover:bg-cyan-500/10 transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-github text-cyan-400"></i> <span data-i18n="hero_btn_repo">GitHub Deposu</span>
                         </a>
                     </div>
 
@@ -233,6 +233,10 @@
                         <div>
                             <div class="text-2xl font-mono font-bold text-emerald-500 dark:text-emerald-400">Pacman & AUR</div>
                             <div class="text-xs text-subtext mt-1" data-i18n="stat_aur">Zengin Paket Deposu</div>
+                        </div>
+                        <div class="border-l border-theme pl-8">
+                            <div class="text-2xl font-mono font-bold text-cyan-500 dark:text-cyan-400">KDE Plasma</div>
+                            <div class="text-xs text-subtext mt-1" data-i18n="stat_de">Varsayılan Masaüstü</div>
                         </div>
                     </div>
                 </div>
@@ -251,12 +255,12 @@
                                 <div class="text-xs font-mono text-slate-400 flex items-center gap-2">
                                     <i class="fa-solid fa-folder-open text-cyan-400"></i> user@taichi-live:~
                                 </div>
-                                <div class="text-xs font-mono text-slate-500">bash</div>
+                                <div class="text-xs font-mono text-slate-500">zsh</div>
                             </div>
 
                             <!-- Terminal Mock Output (Neofetch style) -->
                             <div class="font-mono text-xs sm:text-sm space-y-2 leading-relaxed">
-                                <div class="text-slate-400"><span class="text-cyan-400">live@taichi</span>:<span class="text-purple-400">~</span>$ neofetch</div>
+                                <div class="text-slate-400"><span class="text-cyan-400">live@taichi-iso</span>:<span class="text-purple-400">~</span>$ neofetch</div>
                                 <div class="grid grid-cols-12 gap-2 pt-2">
                                     <div class="col-span-4 text-cyan-400 font-bold select-none leading-tight">
                                         <pre class="text-[10px] sm:text-xs text-cyan-400">
@@ -272,10 +276,9 @@
                                         <div><span class="text-cyan-400 font-bold">OS:</span> Taichi Linux x86_64</div>
                                         <div><span class="text-cyan-400 font-bold">Base:</span> Arch Linux (ArchISO)</div>
                                         <div><span class="text-cyan-400 font-bold">Kernel:</span> 6.8.9-arch1-1</div>
-                                        <div><span class="text-cyan-400 font-bold">Uptime:</span> 42 mins</div>
                                         <div><span class="text-cyan-400 font-bold">Packages:</span> 684 (pacman)</div>
                                         <div><span class="text-cyan-400 font-bold">Shell:</span> ZSH 5.9 + Starship</div>
-                                        <div><span class="text-cyan-400 font-bold">WM/DE:</span> KDE Plasma / Wayland</div>
+                                        <div><span class="text-cyan-400 font-bold">DE/WM:</span> KDE Plasma</div>
                                     </div>
                                 </div>
                                 <div class="flex gap-1.5 pt-3">
@@ -288,7 +291,7 @@
                                     <div class="w-4 h-4 bg-white rounded-sm"></div>
                                 </div>
                                 <div class="text-slate-400 pt-2 flex items-center gap-1">
-                                    <span class="text-emerald-400">live@taichi</span>:<span class="text-purple-400">~</span>$&nbsp;
+                                    <span class="text-emerald-400">live@taichi-iso</span>:<span class="text-purple-400">~</span>$&nbsp;
                                     <span class="w-2.5 h-4 bg-cyan-400 animate-pulse"></span>
                                 </div>
                             </div>
@@ -326,7 +329,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-heading mb-3" data-i18n="c2_title">Işık Hızında Performans</h3>
                     <p class="text-subtext text-sm leading-relaxed" data-i18n="c2_desc">
-                        Arka planda gereksiz servisler çalıştırmaz. Saniyeler içinde açılan mimarisi ile donanımınızı maksimum verimlilikte kullanır.
+                        Arka plında gereksiz servisler çalıştırmaz. Saniyeler içinde açılan mimarisi ile donanımınızı maksimum verimlilikte kullanır.
                     </p>
                 </div>
 
@@ -344,11 +347,11 @@
                 <!-- Card 4 -->
                 <div class="glass-card rounded-2xl p-8 relative overflow-hidden group">
                     <div class="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-500 dark:text-blue-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-sliders"></i>
+                        <i class="fa-solid fa-desktop"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-heading mb-3" data-i18n="c4_title">Modern Masaüstü (Dotfiles)</h3>
+                    <h3 class="text-xl font-bold text-heading mb-3" data-i18n="c4_title">KDE Plasma Ortamı</h3>
                     <p class="text-subtext text-sm leading-relaxed" data-i18n="c4_desc">
-                        Özenle tasarlanmış Hyprland / KDE konfigürasyonları, özelleştirilmiş Rofi menüsü ve stiline uygun RICE tasarımı hazır gelir.
+                        Özenle yapılandırılmış KDE Plasma masaüstü ortamı, modern temaları ve akıcı animasyonları ile üst düzey kullanım deneyimi sağlar.
                     </p>
                 </div>
 
@@ -376,36 +379,36 @@
             </div>
         </section>
 
-        <!-- ARCHITECTURE / HOW IT WORKS SECTION -->
+        <!-- ARCHITECTURE & BUILD INSTRUCTIONS SECTION -->
         <section id="architecture" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-theme">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
                     <h2 class="text-xs font-mono font-bold tracking-widest text-emerald-500 dark:text-emerald-400 uppercase" data-i18n="arch_subtitle">Derleme Mimarisi</h2>
                     <h3 class="text-3xl font-bold text-heading" data-i18n="arch_title">ArchISO Gücüyle Kendi Dağıtımın</h3>
                     <p class="text-subtext leading-relaxed" data-i18n="arch_desc">
-                        Taichi Linux, standart ArchISO profilinin modüler bir şekilde özelleştirilmesiyle elde edildi. Canlı medyada ihtiyacınız olan tüm sürücüler (NVIDIA/AMD/Intel) ve temel sistem araçları önceden yüklenmiştir.
+                        Taichi Linux, standart ArchISO profilinin modüler bir şekilde özelleştirilmesiyle elde edildi. Canlı medyada ihtiyacınız olan tüm sürücüler ve temel sistem araçları önceden yüklenmiştir.
                     </p>
                     
                     <div class="space-y-4 pt-2">
                         <div class="flex items-start gap-4">
                             <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-500 dark:text-cyan-400 flex items-center justify-center font-mono font-bold shrink-0">1</div>
                             <div>
-                                <h4 class="text-heading font-semibold" data-i18n="step1_title">Özel Calamares / Script Kurucu</h4>
-                                <p class="text-subtext text-sm" data-i18n="step1_desc">Görsel kurulum adımları ile dakikalar içinde disk bölümleme ve sistem kurulumu.</p>
+                                <h4 class="text-heading font-semibold" data-i18n="step1_title">GitHub Actions İle Otomatik Derleme</h4>
+                                <p class="text-subtext text-sm" data-i18n="step1_desc">Workflow dosyamız sayesinde her commit ile ISO otomatik olarak bulutta derlenir.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
                             <div class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-500 dark:text-purple-400 flex items-center justify-center font-mono font-bold shrink-0">2</div>
                             <div>
-                                <h4 class="text-heading font-semibold" data-i18n="step2_title">Optimize Edilmiş Kernel</h4>
-                                <p class="text-subtext text-sm" data-i18n="step2_desc">Düşük gecikme süresi (low latency) sağlayan çekirdek parametreleri.</p>
+                                <h4 class="text-heading font-semibold" data-i18n="step2_title">Yerel Terminalde Derleme İmkânı</h4>
+                                <p class="text-subtext text-sm" data-i18n="step2_desc">Arch Linux üzerinde `mkarchiso` komutunu kullanarak ISO imajını kendiniz oluşturabilirsiniz.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
                             <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-500 dark:text-emerald-400 flex items-center justify-center font-mono font-bold shrink-0">3</div>
                             <div>
-                                <h4 class="text-heading font-semibold" data-i18n="step3_title">Geliştirici Dostu Ortam</h4>
-                                <p class="text-subtext text-sm" data-i18n="step3_desc">Git, Neovim, zsh, Docker ve temel derleme araçları varsayılan olarak yüklüdür.</p>
+                                <h4 class="text-heading font-semibold" data-i18n="step3_title">Geliştirici Dostu Altyapı</h4>
+                                <p class="text-subtext text-sm" data-i18n="step3_desc">Git, Neovim, zsh, Docker ve temel derleme araçları varsayılan olarak yapılandırılmıştır.</p>
                             </div>
                         </div>
                     </div>
@@ -413,21 +416,28 @@
 
                 <!-- Code Workflow Visual -->
                 <div class="glass-panel p-6 rounded-2xl border border-theme font-mono text-xs sm:text-sm text-slate-300 space-y-4 bg-slate-950">
-                    <div class="text-slate-500">// Taichi ISO Build Command</div>
-                    <div class="text-slate-200">
-                        <span class="text-purple-400">sudo</span> mkarchiso -v -w /tmp/archiso-tmp -o ./out ./taichi-profile
+                    <div class="flex items-center justify-between text-slate-400 border-b border-white/10 pb-2">
+                        <span>// Local ISO Build Commands</span>
+                        <a href="https://github.com/bxiefr/Taichi-Linux/blob/main/.github/workflows/build-iso.yml" target="_blank" rel="noopener" class="text-cyan-400 hover:underline text-xs">
+                            <i class="fa-solid fa-gear mr-1"></i>build-iso.yml
+                        </a>
                     </div>
-                    <div class="border-t border-white/10 pt-4 text-slate-500">// Profile Structure</div>
+                    <div class="space-y-2 text-slate-200">
+                        <div><span class="text-purple-400">git clone</span> https://github.com/bxiefr/Taichi-Linux.git</div>
+                        <div><span class="text-purple-400">cd</span> Taichi-Linux</div>
+                        <div><span class="text-purple-400">sudo</span> pacman -S archiso --needed</div>
+                        <div><span class="text-purple-400">sudo</span> mkarchiso -v -w /tmp/archiso-tmp -o ./out .</div>
+                    </div>
+                    <div class="border-t border-white/10 pt-4 text-slate-500">// Taichi Profile Structure</div>
                     <div class="space-y-1 text-xs">
-                        <div class="text-cyan-400">taichi-profile/</div>
+                        <div class="text-cyan-400">Taichi-Linux/</div>
                         <div class="pl-4 text-slate-400">├── profiledef.sh</div>
                         <div class="pl-4 text-slate-400">├── packages.x86_64</div>
-                        <div class="pl-4 text-slate-400">├── airootfs/ <span class="text-slate-500">(Custom configurations)</span></div>
-                        <div class="pl-8 text-slate-400">└── etc/skel/.config/ <span class="text-emerald-400">(Pre-configured Rice)</span></div>
-                        <div class="pl-4 text-slate-400">└── syslinux/ & efiboot/</div>
+                        <div class="pl-4 text-slate-400">├── .github/workflows/build-iso.yml</div>
+                        <div class="pl-4 text-slate-400">└── airootfs/ <span class="text-slate-500">(Custom configurations)</span></div>
                     </div>
                     <div class="bg-cyan-950/40 border border-cyan-500/30 rounded-lg p-3 text-cyan-300 text-xs flex items-center justify-between">
-                        <span><i class="fa-solid fa-check-circle mr-2"></i> ISO Profile Status: Ready</span>
+                        <span><i class="fa-solid fa-check-circle mr-2"></i> Build Script: Ready</span>
                         <span class="text-slate-400">SUCCESS</span>
                     </div>
                 </div>
@@ -439,7 +449,7 @@
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <h2 class="text-xs font-mono font-bold tracking-widest text-purple-500 dark:text-purple-400 uppercase mb-3" data-i18n="term_subtitle">Tarayıcıda Deneyimle</h2>
                 <p class="text-3xl font-extrabold text-heading" data-i18n="term_title">Canlı Terminal Simülatörü</p>
-                <p class="text-subtext mt-2 text-sm" data-i18n="term_desc">Aşağıdaki terminal kutusında `help`, `neofetch`, `pacman`, `whoami`, `clear` gibi komutları deneyin.</p>
+                <p class="text-subtext mt-2 text-sm" data-i18n="term_desc">Aşağıdaki terminal kutusunda `help`, `neofetch`, `pacman`, `whoami`, `clear` gibi komutları deneyin.</p>
             </div>
 
             <div class="max-w-4xl mx-auto font-mono">
@@ -534,36 +544,33 @@
             </div>
         </section>
 
-        <!-- DOWNLOAD SECTION -->
+        <!-- DOWNLOAD & BUILD SECTION -->
         <section id="download" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-theme">
             <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-cyan-500/20 relative overflow-hidden">
                 <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div class="text-center max-w-3xl mx-auto space-y-6">
-                    <h2 class="text-3xl sm:text-5xl font-extrabold text-heading" data-i18n="dl_title">Taichi Linux'u İndir</h2>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-heading" data-i18n="dl_title">Taichi Linux'u İndir ya da Kendin Derle</h2>
                     <p class="text-subtext text-sm sm:text-base" data-i18n="dl_desc">
-                        En son yayınlanan ISO imajını indirip Rufus, Ventoy veya `dd` komutu ile USB sürücünüze yazdırabilirsiniz.
+                        Hazır ISO kalıbını GitHub üzerinden indirebilir veya kaynak kodlarını klonlayarak kendi sisteminizde derleyebilirsiniz.
                     </p>
 
-                    <!-- Download Buttons -->
+                    <!-- Download & Build Buttons -->
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                        <a href="#" id="dl-direct-btn" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-emerald-400 hover:scale-105 transition-all shadow-[0_0_25px_rgba(0,242,254,0.4)] flex items-center justify-center gap-3">
-                            <i class="fa-solid fa-download text-lg"></i> <span data-i18n="dl_btn_direct">Direkt ISO İndir (.iso)</span>
+                        <a href="https://github.com/bxiefr/Taichi-Linux/releases" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-emerald-400 hover:scale-105 transition-all shadow-[0_0_25px_rgba(0,242,254,0.4)] flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-download text-lg"></i> <span data-i18n="dl_btn_direct">ISO İndir (GitHub Releases)</span>
                         </a>
-                        <a href="#" id="dl-torrent-btn" class="w-full sm:w-auto px-6 py-4 rounded-xl font-medium text-heading glass-card hover:bg-cyan-500/10 transition-all flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-network-wired text-cyan-400"></i> <span data-i18n="dl_btn_torrent">Torrent</span>
+                        <a href="https://github.com/bxiefr/Taichi-Linux" target="_blank" rel="noopener" class="w-full sm:w-auto px-6 py-4 rounded-xl font-medium text-heading glass-card hover:bg-cyan-500/10 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-github text-cyan-400 text-lg"></i> <span data-i18n="dl_btn_build">Kendin Derle (GitHub Reposu)</span>
                         </a>
                     </div>
 
-                    <!-- Hash Checksum Box -->
-                    <div class="pt-6 max-w-xl mx-auto">
-                        <div class="text-xs font-mono text-subtext mb-2">SHA256 Checksum:</div>
-                        <div class="glass-card p-3 rounded-xl flex items-center justify-between text-xs font-mono">
-                            <span id="sha256-hash" class="text-cyan-500 dark:text-cyan-400 truncate mr-2">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</span>
-                            <button id="btn-copy-hash" onclick="copyHash()" class="text-subtext hover:text-heading px-3 py-1 rounded bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors shrink-0">
-                                <i class="fa-regular fa-copy"></i> <span data-i18n="btn_copy">Kopyala</span>
-                            </button>
-                        </div>
+                    <!-- Workflow Link Badge -->
+                    <div class="pt-2">
+                        <a href="https://github.com/bxiefr/Taichi-Linux/blob/main/.github/workflows/build-iso.yml" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 hover:underline">
+                            <i class="fa-solid fa-code-commit"></i>
+                            <span data-i18n="dl_workflow_link">GitHub Actions Build Workflow Dosyasını İncele (build-iso.yml)</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -606,8 +613,7 @@
                     <ul class="space-y-2 text-xs text-subtext">
                         <li><a href="https://wiki.archlinux.org" target="_blank" rel="noopener" class="hover:text-cyan-400 transition-colors">Arch Wiki</a></li>
                         <li><a href="https://gitlab.archlinux.org/archlinux/archiso" target="_blank" rel="noopener" class="hover:text-cyan-400 transition-colors">ArchISO GitLab</a></li>
-                        <li><a href="#" class="hover:text-cyan-400 transition-colors">GitHub Reposu</a></li>
-                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Discord / Telegram</a></li>
+                        <li><a href="https://github.com/bxiefr/Taichi-Linux" target="_blank" rel="noopener" class="hover:text-cyan-400 transition-colors">GitHub Reposu</a></li>
                     </ul>
                 </div>
 
@@ -618,9 +624,7 @@
                     © 2026 Taichi Linux Project. Arch Linux™ is a registered trademark of Judd Vinet.
                 </div>
                 <div class="flex items-center gap-4 text-subtext text-sm">
-                    <a href="#" class="hover:text-cyan-400"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="hover:text-cyan-400"><i class="fa-brands fa-discord"></i></a>
-                    <a href="#" class="hover:text-cyan-400"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://github.com/bxiefr/Taichi-Linux" target="_blank" rel="noopener" class="hover:text-cyan-400"><i class="fa-brands fa-github"></i></a>
                 </div>
             </div>
         </div>
@@ -637,12 +641,13 @@
                 nav_specs: "Gereksinimler",
                 nav_download: "İndir",
                 btn_iso: "ISO İndir",
-                hero_badge: "ArchISO Tabanlı • Rolling Release v2026.1",
+                hero_badge: "ArchISO Tabanlı • Rolling Release",
                 hero_title: 'Güç, Sadelik ve <br><span class="gradient-text">Mükemmel Denge</span>',
                 hero_desc: "Arch Linux ve ArchISO altyapısı üzerine inşa edilmiş; modern, hafif, özelleştirilebilir ve kutudan çıktığı gibi yüksek performans sunan yeni nesil Linux dağıtımı.",
                 hero_btn_get: "Taichi ISO'yu Edin",
-                hero_btn_live: "Canlı Deneyim",
+                hero_btn_repo: "GitHub Deposu",
                 stat_aur: "Zengin Paket Deposu",
+                stat_de: "Varsayılan Masaüstü",
                 feat_subtitle: "Neden Taichi Linux?",
                 feat_title: "Neden Sıfırdan Arch Kurmakla Uğraşasın?",
                 feat_desc: "Taichi OS, Arch Linux’un saf gücünü hazır, optimize edilmiş ve estetik bir canlı ISO ortamıyla buluşturur.",
@@ -652,8 +657,8 @@
                 c2_desc: "Arka planda gereksiz servisler çalıştırmaz. Saniyeler içinde açılan mimarisi ile donanımınızı maksimum verimlilikte kullanır.",
                 c3_title: "Pacman & AUR Hazır",
                 c3_desc: "Arch Linux'un devasa paket deposu ve AUR (Arch User Repository) desteğiyle ihtiyacınız olan her yazılıma tek komutla ulaşın.",
-                c4_title: "Modern Masaüstü (Dotfiles)",
-                c4_desc: "Özenle tasarlanmış Hyprland / KDE konfigürasyonları, özelleştirilmiş Rofi menüsü ve stiline uygun RICE tasarımı hazır gelir.",
+                c4_title: "KDE Plasma Ortamı",
+                c4_desc: "Özenle yapılandırılmış KDE Plasma masaüstü ortamı, modern temaları ve akıcı animasyonları ile üst düzey kullanım deneyimi sağlar.",
                 c5_title: "Gizlilik & Tam Kontrol",
                 c5_desc: "Telemetri yok, veri takibi yok. İşletim sisteminizin her bir satır kodu sizin kontrolünüz altındadır.",
                 c6_title: "Rolling Release",
@@ -661,12 +666,12 @@
                 arch_subtitle: "Derleme Mimarisi",
                 arch_title: "ArchISO Gücüyle Kendi Dağıtımın",
                 arch_desc: "Taichi Linux, standart ArchISO profilinin modüler bir şekilde özelleştirilmesiyle elde edildi. Canlı medyada ihtiyacınız olan tüm sürücüler ve temel sistem araçları önceden yüklenmiştir.",
-                step1_title: "Özel Calamares / Script Kurucu",
-                step1_desc: "Görsel kurulum adımları ile dakikalar içinde disk bölümleme ve sistem kurulumu.",
-                step2_title: "Optimize Edilmiş Kernel",
-                step2_desc: "Düşük gecikme süresi (low latency) sağlayan çekirdek parametreleri.",
-                step3_title: "Geliştirici Dostu Ortam",
-                step3_desc: "Git, Neovim, zsh, Docker ve temel derleme araçları varsayılan olarak yüklüdür.",
+                step1_title: "GitHub Actions İle Otomatik Derleme",
+                step1_desc: "Workflow dosyamız sayesinde her commit ile ISO otomatik olarak bulutta derlenir.",
+                step2_title: "Yerel Terminalde Derleme İmkânı",
+                step2_desc: "Arch Linux üzerinde `mkarchiso` komutunu kullanarak ISO imajını kendiniz oluşturabilirsiniz.",
+                step3_title: "Geliştirici Dostu Altyapı",
+                step3_desc: "Git, Neovim, zsh, Docker ve temel derleme araçları varsayılan olarak yapılandırılmıştır.",
                 term_subtitle: "Tarayıcıda Deneyimle",
                 term_title: "Canlı Terminal Simülatörü",
                 term_desc: "Aşağıdaki terminal kutusunda help, neofetch, pacman, whoami, clear gibi komutları deneyin.",
@@ -681,12 +686,11 @@
                 storage_label: "Depolama:",
                 usb_label: "Kurulum:",
                 gpu_label: "Ekran Kartı:",
-                dl_title: "Taichi Linux'u İndir",
-                dl_desc: "En son yayınlanan ISO imajını indirip Rufus, Ventoy veya dd komutu ile USB sürücünüze yazdırabilirsiniz.",
-                dl_btn_direct: "Direkt ISO İndir (.iso)",
-                dl_btn_torrent: "Torrent",
-                btn_copy: "Kopyala",
-                copied: "Kopyalandı!",
+                dl_title: "Taichi Linux'u İndir ya da Kendin Derle",
+                dl_desc: "Hazır ISO kalıbını GitHub üzerinden indirebilir veya kaynak kodlarını klonlayarak kendi sisteminizde derleyebilirsiniz.",
+                dl_btn_direct: "ISO İndir (GitHub Releases)",
+                dl_btn_build: "Kendin Derle (GitHub Reposu)",
+                dl_workflow_link: "GitHub Actions Build Workflow Dosyasını İncele (build-iso.yml)",
                 footer_about: "Arch Linux ve ArchISO projesi altyapısı kullanılarak geliştirilmiş açık kaynaklı bağımsız Linux dağıtımı projesi.",
                 footer_sec_links: "Bağlantılar",
                 footer_sec_community: "Topluluk & Kaynaklar"
@@ -698,12 +702,13 @@
                 nav_specs: "Requirements",
                 nav_download: "Download",
                 btn_iso: "Download ISO",
-                hero_badge: "ArchISO Based • Rolling Release v2026.1",
+                hero_badge: "ArchISO Based • Rolling Release",
                 hero_title: 'Power, Simplicity & <br><span class="gradient-text">Perfect Balance</span>',
                 hero_desc: "Built on top of Arch Linux & ArchISO infrastructure; a next-gen Linux distribution offering lightweight performance, modern aesthetics, and out-of-the-box customization.",
                 hero_btn_get: "Get Taichi ISO",
-                hero_btn_live: "Try Live Terminal",
+                hero_btn_repo: "GitHub Repository",
                 stat_aur: "Rich Package Repository",
+                stat_de: "Default Desktop",
                 feat_subtitle: "Why Taichi Linux?",
                 feat_title: "Why Build Arch From Scratch?",
                 feat_desc: "Taichi OS combines the raw power of Arch Linux with a pre-configured, optimized, and aesthetic live ISO environment.",
@@ -713,19 +718,19 @@
                 c2_desc: "No bloat or unwanted background daemons. Boots in seconds to maximize hardware capability.",
                 c3_title: "Pacman & AUR Ready",
                 c3_desc: "Access thousands of packages from Arch Official repositories and the Arch User Repository with a single command.",
-                c4_title: "Modern Desktop (Dotfiles)",
-                c4_desc: "Shipped with custom Hyprland / KDE configurations, themed Rofi menu, and ready-to-use aesthetic RICE setups.",
+                c4_title: "KDE Plasma Desktop",
+                c4_desc: "Tailored KDE Plasma environment providing modern styling, fluid animations, and high productivity.",
                 c5_title: "Privacy & Total Control",
                 c5_desc: "No telemetry, no tracking. Every single line of code in your operating system stays completely under your control.",
                 c6_title: "Rolling Release",
                 c6_desc: "Stay updated continuously. Install once and receive the latest kernel updates and package releases immediately.",
                 arch_subtitle: "Build Architecture",
                 arch_title: "Craft Your OS with ArchISO Power",
-                arch_desc: "Taichi Linux is engineered by modularly customizing standard ArchISO profiles. All required hardware drivers (NVIDIA/AMD/Intel) and system utilities come pre-installed.",
-                step1_title: "Custom Calamares / Script Installer",
-                step1_desc: "Guided visual installer for fast disk partitioning and system setup within minutes.",
-                step2_title: "Optimized Kernel",
-                step2_desc: "Fine-tuned low-latency kernel parameters for smooth responsiveness.",
+                arch_desc: "Taichi Linux is engineered by modularly customizing standard ArchISO profiles. All required hardware drivers and system utilities come pre-installed.",
+                step1_title: "Automated GitHub Actions Build",
+                step1_desc: "Our workflow compiles fresh ISO images directly in the cloud on every push.",
+                step2_title: "Build Locally in Terminal",
+                step2_desc: "Use standard `mkarchiso` commands on Arch Linux to generate your own custom ISO image.",
                 step3_title: "Developer Ready",
                 step3_desc: "Git, Neovim, ZSH, Docker, and core build utilities are pre-configured.",
                 term_subtitle: "Experience In Browser",
@@ -742,12 +747,11 @@
                 storage_label: "Storage:",
                 usb_label: "Installer:",
                 gpu_label: "Graphics:",
-                dl_title: "Download Taichi Linux",
-                dl_desc: "Grab the latest ISO image and flash it to your USB drive using Rufus, Ventoy, or dd command.",
-                dl_btn_direct: "Direct ISO Download (.iso)",
-                dl_btn_torrent: "Torrent Mirror",
-                btn_copy: "Copy",
-                copied: "Copied!",
+                dl_title: "Download Taichi Linux or Build it Yourself",
+                dl_desc: "Get the pre-built ISO image via GitHub or clone the repository to build it locally.",
+                dl_btn_direct: "Download ISO (GitHub Releases)",
+                dl_btn_build: "Build Yourself (GitHub Repo)",
+                dl_workflow_link: "View GitHub Actions Build Workflow File (build-iso.yml)",
                 footer_about: "An open-source independent Linux distribution project built on Arch Linux and ArchISO infrastructure.",
                 footer_sec_links: "Links",
                 footer_sec_community: "Community & Resources"
@@ -768,7 +772,7 @@
                 }
             });
 
-            // Update terminal welcome message if clear
+            // Update terminal welcome message if present
             const welcomeMsg = document.getElementById('terminal-welcome');
             if (welcomeMsg) {
                 welcomeMsg.innerHTML = translations[lang].term_welcome;
@@ -810,39 +814,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Download Simulation alerts
-        document.getElementById('dl-direct-btn').addEventListener('click', (e) => {
-            e.preventDefault();
-            const msg = currentLang === 'tr' 
-                ? 'ISO indirme simülasyonu başlatıldı! (Taichi-Linux-2026.1-x86_64.iso)' 
-                : 'ISO download simulation started! (Taichi-Linux-2026.1-x86_64.iso)';
-            alert(msg);
-        });
-
-        document.getElementById('dl-torrent-btn').addEventListener('click', (e) => {
-            e.preventDefault();
-            const msg = currentLang === 'tr' ? 'Torrent dosyası indiriliyor...' : 'Downloading Torrent file...';
-            alert(msg);
-        });
-
-        // Copy SHA256 Hash
-        function copyHash() {
-            const hashText = document.getElementById('sha256-hash').innerText;
-            const tempInput = document.createElement('input');
-            tempInput.value = hashText;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-
-            const btn = document.getElementById('btn-copy-hash');
-            const originalHTML = btn.innerHTML;
-            btn.innerHTML = `<i class="fa-solid fa-check text-emerald-400"></i> ${translations[currentLang].copied}`;
-            setTimeout(() => {
-                btn.innerHTML = originalHTML;
-            }, 2000);
-        }
-
         // Terminal Interactive Simulator
         const terminalInput = document.getElementById('terminal-input');
         const terminalOutput = document.getElementById('terminal-output');
@@ -869,7 +840,7 @@
                         ? `Kullanılabilir komutlar:<br>- <span class="text-cyan-400">neofetch</span> : Sistem bilgilerini gösterir<br>- <span class="text-cyan-400">uname -a</span> : Çekirdek sürümü<br>- <span class="text-cyan-400">pacman -Syu</span> : Sistem güncelleme<br>- <span class="text-cyan-400">whoami</span> : Kullanıcı kimliği<br>- <span class="text-cyan-400">ls</span> : Dosya listesi<br>- <span class="text-cyan-400">clear</span> : Ekranı temizler`
                         : `Available commands:<br>- <span class="text-cyan-400">neofetch</span> : Displays system info<br>- <span class="text-cyan-400">uname -a</span> : Print kernel release<br>- <span class="text-cyan-400">pacman -Syu</span> : Update packages<br>- <span class="text-cyan-400">whoami</span> : Print current user<br>- <span class="text-cyan-400">ls</span> : List files<br>- <span class="text-cyan-400">clear</span> : Clear screen`;
                 } else if (cmd === 'neofetch') {
-                    responseLine.innerHTML = `<div class="text-cyan-400 font-bold">Taichi Linux x86_64</div>--------------------<br><span class="text-slate-400">OS:</span> Taichi Linux (ArchISO Build)<br><span class="text-slate-400">Kernel:</span> 6.8.9-arch1-1<br><span class="text-slate-400">Shell:</span> zsh 5.9<br><span class="text-slate-400">WM:</span> Hyprland (Wayland)`;
+                    responseLine.innerHTML = `<div class="text-cyan-400 font-bold">Taichi Linux x86_64</div>--------------------<br><span class="text-slate-400">OS:</span> Taichi Linux (ArchISO Build)<br><span class="text-slate-400">Kernel:</span> 6.8.9-arch1-1<br><span class="text-slate-400">Shell:</span> zsh 5.9<br><span class="text-slate-400">DE/WM:</span> KDE Plasma`;
                 } else if (cmd === 'uname -a') {
                     responseLine.innerHTML = `Linux taichi-iso 6.8.9-arch1-1 #1 SMP PREEMPT_DYNAMIC SMP x86_64 GNU/Linux`;
                 } else if (cmd === 'whoami') {
