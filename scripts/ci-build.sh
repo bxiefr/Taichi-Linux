@@ -25,6 +25,8 @@ bash scripts/prepare-profile.sh "$BUILD_DIR/profile" "$REPO_DIR" "$VERSION"
 echo "::endgroup::"
 
 echo "::group::mkarchiso"
+df -h /work /work/build || true
+free -h || true
 mkdir -p "$OUT_DIR"
 mkarchiso -v -w "$BUILD_DIR/work" -o "$OUT_DIR" "$BUILD_DIR/profile"
 echo "::endgroup::"
