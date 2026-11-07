@@ -46,6 +46,7 @@ jobs:
           VERSION: ${{ steps.ver.outputs.version }}
         run: |
           mkdir -p out
+          # Geçici derleme dosyaları (7-10 GB) ayrı, geniş olan /mnt diskine gider
           sudo mkdir -p /mnt/taichi-build
           sudo chmod 777 /mnt/taichi-build
           df -h / /mnt

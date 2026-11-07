@@ -1,0 +1,69 @@
+#!/bin/bash
+# Kurulu sistemde pacman.conf'u ayarlar. Calamares "cleanup" adımından, hedef sistemin
+# içinde (chroot) çalışır:
+#   1) yerel derleme deposunu ([taichi-local]) kaldırır
+#   2) CachyOS depolarını, bu bilgisayarın işlemcisine göre ekler:
+#        v4 -> x86-64-v4 destekliyor, AVX-512 gerçekten var, hibrit (P/E çekirdek) değil
+#        v3 -> x86-64-v3 destekliyor
+#        yoksa sadece genel [cachyos]
+set -u
+
+CONF=/etc/pacman.conf
+BLOCK=/tmp/taichi-cachyos.block
+
+supports() {
+  /lib/ld-linux-x86-64.so.2 --help 2>/dev/null | grep -q "$1 (supported, searched)"
+}
+has_flag() {
+  grep -m1 '^flags' /proc/cpuinfo 2>/dev/null | grep -qw "$1"
+}
+
+# --- 1) yerel depo ve eski CachyOS bölümlerini temizle ---
+awk '/^\[/ { skip = ($0 ~ /^\[(cachyos|taichi-local)/) } !skip { print }' "$CONF" > "$CONF.new"
+mv "$CONF.new" "$CONF"
+
+# --- 2) CachyOS yansı listeleri kurulu mu? ---
+if [ ! -f /etc/pacman.d/cachyos-mirrorlist ]; then
+  echo "UYARI: cachyos-mirrorlist yok, CachyOS depoları eklenmedi."
+  exit 0
+fi
+
+# --- 3) işlemci seviyesi ---
+level=generic
+if supports x86-64-v3; then level=v3; fi
+if supports x86-64-v4 \
+   && has_flag avx512f && has_flag avx512bw && has_flag avx512cd \
+   && has_flag avx512dq && has_flag avx512vl \
+   && ! has_flag hybrid; then
+  level=v4
+fi
+if [ "$level" != generic ] && [ ! -f "/etc/pacman.d/cachyos-${level}-mirrorlist" ]; then
+  echo "UYARI: cachyos-${level}-mirrorlist yok, genel depoya düşülüyor."
+  level=generic
+fi
+echo "CachyOS seviyesi: $level"
+
+# --- 4) bölümleri yaz ([core]'dan önce) ---
+{
+  if [ "$level" != generic ]; then
+    for r in "" "-core" "-extra"; do
+      echo "[cachyos${r}-${level}]"
+      echo "Include = /etc/pacman.d/cachyos-${level}-mirrorlist"
+      echo
+    done
+  fi
+  echo "[cachyos]"
+  echo "Include = /etc/pacman.d/cachyos-mirrorlist"
+  echo
+} > "$BLOCK"
+
+awk -v f="$BLOCK" '/^\[core\]/ && !d { while ((getline l < f) > 0) print l; d=1 } { print }' \
+  "$CONF" > "$CONF.new"
+mv "$CONF.new" "$CONF"
+rm -f "$BLOCK"
+
+sed -i 's/^Architecture *=.*/Architecture = auto/' "$CONF"
+
+if ! grep -q '^\[cachyos\]' "$CONF"; then
+  echo "UYARI: [cachyos] bolumu pacman.conf'a eklenemedi."
+fi

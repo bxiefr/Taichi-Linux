@@ -16,6 +16,17 @@ echo "::group::Araçları kur"
 pacman -Syu --noconfirm --needed archiso base-devel git sudo
 echo "::endgroup::"
 
+echo "::group::CachyOS imza anahtarını güven listesine ekle"
+pacman-key --init
+pacman-key --populate archlinux
+for i in 1 2 3; do
+  pacman-key --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com && break
+  echo "Anahtar alınamadı, tekrar deneniyor ($i/3)..."
+  sleep 5
+done
+pacman-key --lsign-key F3B607488DB35A47
+echo "::endgroup::"
+
 echo "::group::AUR paketlerini derle (yerel depo)"
 bash scripts/build-aur-repo.sh "$REPO_DIR" aur-packages/list.txt
 echo "::endgroup::"

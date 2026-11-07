@@ -49,6 +49,15 @@ ttf-liberation
 calamares
 os-prober
 
+# --- CachyOS (anahtarlık, yansı listeleri, çekirdek) ---
+# Canlı ISO Arch çekirdeğiyle açılır. linux-cachyos imaja girer, kurulumda varsayılan olur.
+cachyos-keyring
+cachyos-mirrorlist
+cachyos-v3-mirrorlist
+cachyos-v4-mirrorlist
+linux-cachyos
+gawk
+
 # --- Kurulum için gerekli araçlar (UEFI + BIOS önyükleyici, dosya sistemleri) ---
 grub
 efibootmgr

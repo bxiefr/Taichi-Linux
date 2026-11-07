@@ -53,10 +53,11 @@ cat >> "$DEST/profiledef.sh" <<'EOF'
 file_permissions+=(
   ["/usr/local/bin/taichi-live-setup"]="0:0:755"
   ["/usr/local/bin/taichi-installer"]="0:0:755"
+  ["/usr/local/bin/taichi-setup-repos"]="0:0:755"
   ["/etc/skel/Desktop/install-taichi.desktop"]="0:0:755"
 )
 
-# xz yerine zstd: GitHub runner'da daha az bellek/disk basıncı, daha hızlı.
+# xz yerine zstd: GitHub runner'da daha az bellek/disk basıncı, daha hızlı. ISO ~%10-15 büyür.
 airootfs_image_tool_options=('-comp' 'zstd' '-Xcompression-level' '15' '-b' '1M')
 EOF
 
@@ -75,7 +76,23 @@ for f in "$DEST"/syslinux/*.cfg "$DEST"/efiboot/loader/entries/*.conf "$DEST"/gr
 done
 shopt -u nullglob
 
-# ---------------------------------------------------------------- 5) pacman.conf: yerel depo
+# ---------------------------------------------------------------- 5a) pacman.conf: CachyOS genel deposu
+# Derleme sırasında yalnızca genel [cachyos] deposu kullanılır (her işlemcide çalışır).
+# CachyOS'un önerdiği gibi [core]'dan ÖNCE konur; CachyOS'un pacman'ı ve linux-cachyos buradan gelir.
+# CPU'ya özel (v3/v4) depolar kurulumda, hedef bilgisayarın işlemcisine bakılarak eklenir.
+CACHY_BLOCK="$(mktemp)"
+cat > "$CACHY_BLOCK" <<'EOF'
+[cachyos]
+Server = https://mirror.cachyos.org/repo/$arch/$repo
+
+EOF
+awk -v f="$CACHY_BLOCK" '/^\[core\]/ && !d { while ((getline l < f) > 0) print l; d=1 } { print }' \
+  "$DEST/pacman.conf" > "$DEST/pacman.conf.new"
+mv "$DEST/pacman.conf.new" "$DEST/pacman.conf"
+rm -f "$CACHY_BLOCK"
+grep -q '^\[cachyos\]' "$DEST/pacman.conf" || { echo "HATA: [cachyos] bolumu pacman.conf'a eklenemedi" >&2; exit 1; }
+
+# ---------------------------------------------------------------- 5b) pacman.conf: yerel depo
 cat >> "$DEST/pacman.conf" <<EOF
 
 [taichi-local]
