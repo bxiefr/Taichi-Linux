@@ -52,8 +52,16 @@ cat >> "$DEST/profiledef.sh" <<'EOF'
 # --- Taichi Linux eklemeleri ---
 file_permissions+=(
   ["/usr/local/bin/taichi-live-setup"]="0:0:755"
+  ["/usr/local/bin/taichi-installer"]="0:0:755"
+  ["/etc/skel/Desktop/install-taichi.desktop"]="0:0:755"
 )
 EOF
+
+# Kurucunun /run/archiso/bootmnt/arch/x86_64/airootfs.sfs yolunu bekler (squashfs + "arch" dizini).
+grep -E '^(install_dir|airootfs_image_type)=' "$DEST/profiledef.sh" || true
+if ! grep -q '^airootfs_image_type="squashfs"' "$DEST/profiledef.sh"; then
+  echo "::warning::airootfs_image_type squashfs degil! Calamares unpackfs.conf yolunu guncelle."
+fi
 
 # ---------------------------------------------------------------- 4) açılış menüsü adları
 shopt -s nullglob
@@ -72,7 +80,10 @@ SigLevel = Optional TrustAll
 Server = file://${REPO_DIR}
 EOF
 
-# ---------------------------------------------------------------- 6) os-release, hostname
+# ---------------------------------------------------------------- 6) hostname
+# NOT: os-release'i buraya KOYMA. Dosya "filesystem" paketine ait; airootfs paketlerden
+# önce kopyalandığı için pacman "conflicting files" hatası verir. Markalama aşamasında
+# ayrıca çözülecek.
 mkdir -p "$A/etc"
 echo "${HOSTNAME_LIVE}" > "$A/etc/hostname"
 

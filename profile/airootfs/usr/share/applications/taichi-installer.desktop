@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Taichi Linux'u Kur
+Name[en]=Install Taichi Linux
+Comment=Taichi Linux'u bilgisayara kur
+Exec=/usr/local/bin/taichi-installer
+Icon=system-software-install
+Terminal=false
+Categories=System;

@@ -1,0 +1,10 @@
+#!/bin/bash
+# Calamares'i canlı oturumda (Wayland) yönetici olarak başlatır.
+# Canlı kullanıcı şifresiz sudo kullanabildiği için parola sorulmaz.
+exec sudo env \
+  XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}" \
+  WAYLAND_DISPLAY="${WAYLAND_DISPLAY:-wayland-0}" \
+  DISPLAY="${DISPLAY:-:0}" \
+  XDG_CURRENT_DESKTOP="KDE" \
+  QT_QPA_PLATFORM="wayland;xcb" \
+  calamares

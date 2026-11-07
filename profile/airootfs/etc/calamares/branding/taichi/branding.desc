@@ -1,0 +1,35 @@
+---
+componentName: taichi
+
+welcomeStyleCalamares: true
+welcomeExpandingLogo: true
+windowExpanding: normal
+windowSize: 800px,520px
+windowPlacement: center
+
+strings:
+  productName:         "Taichi Linux"
+  shortProductName:    "Taichi"
+  version:             "rolling"
+  shortVersion:        "rolling"
+  versionedName:       "Taichi Linux"
+  shortVersionedName:  "Taichi"
+  bootloaderEntryName: "Taichi"
+  productUrl:          "https://github.com/bxiefr/Taichi-Linux"
+  supportUrl:          "https://github.com/bxiefr/Taichi-Linux/issues"
+  knownIssuesUrl:      "https://github.com/bxiefr/Taichi-Linux/issues"
+  releaseNotesUrl:     "https://github.com/bxiefr/Taichi-Linux/releases"
+  donateUrl:           "https://github.com/bxiefr/Taichi-Linux"
+
+images:
+  productLogo: "logo.png"
+  productIcon: "logo.png"
+
+slideshow: "show.qml"
+slideshowAPI: 2
+
+style:
+  sidebarBackground:    "#1f1f1f"
+  sidebarText:          "#f5f5f5"
+  sidebarTextSelect:    "#1f1f1f"
+  sidebarTextHighlight: "#f5f5f5"

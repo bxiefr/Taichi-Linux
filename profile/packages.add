@@ -48,3 +48,21 @@ ttf-liberation
 # --- Kurucu (yerel depodan gelir, bkz. aur-packages/list.txt) ---
 calamares
 os-prober
+
+# --- Kurulum için gerekli araçlar (UEFI + BIOS önyükleyici, dosya sistemleri) ---
+grub
+efibootmgr
+dosfstools
+mtools
+e2fsprogs
+btrfs-progs
+xfsprogs
+ntfs-3g
+exfatprogs
+parted
+squashfs-tools
+rsync
+sudo
+nano
+intel-ucode
+amd-ucode
