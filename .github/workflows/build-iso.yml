@@ -46,9 +46,14 @@ jobs:
           VERSION: ${{ steps.ver.outputs.version }}
         run: |
           mkdir -p out
+          sudo mkdir -p /mnt/taichi-build
+          sudo chmod 777 /mnt/taichi-build
+          df -h / /mnt
+          free -h
           docker run --rm --privileged \
             -e VERSION \
             -v "$GITHUB_WORKSPACE":/work \
+            -v /mnt/taichi-build:/work/build \
             -w /work \
             archlinux:latest \
             bash scripts/ci-build.sh
