@@ -55,6 +55,9 @@ file_permissions+=(
   ["/usr/local/bin/taichi-installer"]="0:0:755"
   ["/etc/skel/Desktop/install-taichi.desktop"]="0:0:755"
 )
+
+# xz yerine zstd: GitHub runner'da daha az bellek/disk basıncı, daha hızlı.
+airootfs_image_tool_options=('-comp' 'zstd' '-Xcompression-level' '15' '-b' '1M')
 EOF
 
 # Kurucunun /run/archiso/bootmnt/arch/x86_64/airootfs.sfs yolunu bekler (squashfs + "arch" dizini).
