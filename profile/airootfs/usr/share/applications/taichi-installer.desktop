@@ -5,6 +5,6 @@ Name=Taichi Linux'u Kur
 Name[en]=Install Taichi Linux
 Comment=Taichi Linux'u bilgisayara kur
 Exec=/usr/local/bin/taichi-installer
-Icon=system-software-install
+Icon=taichi-logo
 Terminal=false
 Categories=System;
