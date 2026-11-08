@@ -1,0 +1,22 @@
+#!/bin/bash
+# Taichi Linux kimliğini yazar: /usr/lib/os-release (/etc/os-release ona bağlıdır).
+# Dosya "filesystem" paketine ait olduğu için airootfs ile ezilemez; bu betik paketlerden
+# SONRA çalışır: derlemede ve her "filesystem" güncellemesinde pacman hook'u ile.
+set -e
+
+cat > /usr/lib/os-release <<'EOF'
+NAME="Taichi Linux"
+PRETTY_NAME="Taichi Linux"
+ID=taichi
+ID_LIKE=arch
+BUILD_ID=rolling
+ANSI_COLOR="38;2;200;200;205"
+HOME_URL="https://github.com/bxiefr/Taichi-Linux"
+DOCUMENTATION_URL="https://wiki.archlinux.org/"
+SUPPORT_URL="https://github.com/bxiefr/Taichi-Linux/issues"
+BUG_REPORT_URL="https://github.com/bxiefr/Taichi-Linux/issues"
+LOGO=taichi-logo
+EOF
+
+# /etc/os-release bir symlink olmalı
+ln -sf ../usr/lib/os-release /etc/os-release

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Taichi ilk giris ayari
+Exec=/usr/local/bin/taichi-first-login
+Terminal=false
+X-KDE-autostart-after=panel
+NoDisplay=true

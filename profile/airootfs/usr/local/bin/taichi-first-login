@@ -1,0 +1,19 @@
+#!/bin/bash
+# İlk girişte bir kez çalışır: Taichi duvar kağıdını masaüstüne uygular.
+MARK="$HOME/.config/taichi-first-login-done"
+[ -e "$MARK" ] && exit 0
+
+IMG=/usr/share/wallpapers/Taichi/contents/images/2560x1440.png
+[ -f "$IMG" ] || exit 0
+
+# plasmashell'in hazır olmasını bekle (en fazla ~30 sn)
+for i in $(seq 1 15); do
+  pgrep -x plasmashell >/dev/null && break
+  sleep 2
+done
+sleep 3
+
+if plasma-apply-wallpaperimage "$IMG" >/dev/null 2>&1; then
+  mkdir -p "$HOME/.config"
+  touch "$MARK"
+fi

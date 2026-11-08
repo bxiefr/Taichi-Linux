@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = filesystem
+
+[Action]
+Description = Taichi Linux kimligi (os-release) yeniden yaziliyor
+When = PostTransaction
+Exec = /bin/bash /usr/local/bin/taichi-brand

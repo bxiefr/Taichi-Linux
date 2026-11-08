@@ -1,0 +1,9 @@
+{
+    "KPlugin": {
+        "Authors": [ { "Name": "Taichi Linux" } ],
+        "Id": "Taichi",
+        "License": "CC0-1.0",
+        "Name": "Taichi",
+        "Name[tr]": "Taichi"
+    }
+}
