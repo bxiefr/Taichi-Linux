@@ -19,20 +19,31 @@ sudo -u builder mkdir -p "$WORK"
 
 built=0
 while read -r line; do
-  pkg="${line%%#*}"
-  pkg="$(echo "$pkg" | xargs)"
-  [ -z "$pkg" ] && continue
+  entry="${line%%#*}"
+  entry="$(echo "$entry" | xargs)"
+  [ -z "$entry" ] && continue
+
+  # Satır biçimi: "paket" ya da "paket skipchecksums"
+  pkg="${entry%% *}"
+  flag=""
+  [ "$entry" != "$pkg" ] && flag="${entry#* }"
+
+  EXTRA=""
+  if [ "$flag" = "skipchecksums" ]; then
+    EXTRA="--skipchecksums"
+    echo "UYARI: $pkg için kaynak sağlama toplamı doğrulaması atlanıyor."
+  fi
 
   echo "=== AUR: $pkg ==="
-  # --skippgpcheck: derleme ortamında yazar anahtarları yok; kaynak sağlama
-  # toplamları (sha256) PKGBUILD içinde yine doğrulanır.
+  # --skippgpcheck: derleme ortamında yazar anahtarları yok.
+  # Kaynak sha256 toplamları PKGBUILD içinde doğrulanır (yalnızca "skipchecksums" işaretliler hariç).
   sudo -u builder bash -c "
     set -euo pipefail
     cd '$WORK'
     rm -rf '$pkg'
     git clone --depth 1 'https://aur.archlinux.org/$pkg.git'
     cd '$pkg'
-    MAKEFLAGS=-j\$(nproc) makepkg -s --noconfirm --needed --skippgpcheck
+    MAKEFLAGS=-j\$(nproc) makepkg -s --noconfirm --needed --skippgpcheck $EXTRA
     for f in *.pkg.tar.*; do
       case \"\$f\" in *-debug-*) continue ;; esac
       cp -v \"\$f\" '$REPO_DIR/'
