@@ -28,7 +28,7 @@ spectacle
 gwenview
 okular
 
-# --- Tarayıcı ---
+# --- Tarayıcı (Arch extra deposunda, pacman ile güncellenir) ---
 librewolf
 
 # --- Ağ, ses, bluetooth ---
