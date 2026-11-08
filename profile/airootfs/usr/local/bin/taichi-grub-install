@@ -1,0 +1,21 @@
+#!/bin/bash
+# Calamares'in "grub-install" komutu yerine çalışır (bootloader.conf: grubInstall).
+# Hedef sistemin içinde (chroot) çalışır; Calamares'in tüm argümanlarını olduğu gibi iletir.
+#
+# Sorun: Bazı ortamlarda (örn. VirtualBox UEFI) chroot içinde EFI değişkenleri görünmez,
+# grub-install "efibootmgr failed to register the boot entry" hatası verir.
+#   1) efivarfs bağlı değilse bağlamayı dener.
+#   2) grub-install başarısız olursa --no-nvram ile tekrar dener. Bu durumda önyükleme girdisi
+#      NVRAM'e yazılmaz, ama Calamares EFI/boot/bootx64.efi yedeğini (installEFIFallback)
+#      kopyalar ve UEFI donanım yazılımı oradan başlatır.
+
+if [ -d /sys/firmware/efi ] && ! mountpoint -q /sys/firmware/efi/efivars 2>/dev/null; then
+  mount -t efivarfs efivarfs /sys/firmware/efi/efivars 2>/dev/null || true
+fi
+
+if grub-install "$@"; then
+  exit 0
+fi
+
+echo "UYARI: grub-install basarisiz, --no-nvram ile yeniden deneniyor." >&2
+exec grub-install --no-nvram "$@"

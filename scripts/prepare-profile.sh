@@ -55,6 +55,7 @@ file_permissions+=(
   ["/usr/local/bin/taichi-installer"]="0:0:755"
   ["/usr/local/bin/taichi-setup-repos"]="0:0:755"
   ["/usr/local/bin/taichi-brand"]="0:0:755"
+  ["/usr/local/bin/taichi-grub-install"]="0:0:755"
   ["/usr/local/bin/taichi-first-login"]="0:0:755"
   ["/etc/skel/Desktop/install-taichi.desktop"]="0:0:755"
 )
