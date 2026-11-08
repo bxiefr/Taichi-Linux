@@ -2,7 +2,7 @@
 # Bir paket diğerine bağlıysa bağımlı olan SONRA yazılır.
 # AUR'daki bağımlılıklar otomatik çözülmez, elle buraya eklenir.
 
-ckbcomp
+ckbcomp skipchecksums
 calamares
 
 # calamares derlenmezse yedek olarak şunu dene (calamares satırını silip):
